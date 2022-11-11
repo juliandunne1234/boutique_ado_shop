@@ -82,6 +82,8 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
+# 'allauth' sends confirmation emails to any new account 
+# Required to temporarily log email to console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
