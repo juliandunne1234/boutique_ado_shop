@@ -17,10 +17,15 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
+            # name used for search done by 'id' - used as part of tutorial
+            # if sortkey == 'name':
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 # Annotation allows us to add a temporary field on a model
                 products = products.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                # __ syntax allows to drill into model
+                sortkey = 'category__name'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
