@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from .models import Product, Category
 
 
@@ -17,8 +18,6 @@ def all_products(request):
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
-            # name used for search done by 'id' - used as part of tutorial
-            # if sortkey == 'name':
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 # Annotation allows us to add a temporary field on a model
