@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-sg*-w=*kf3)d*#06zf$lld)1@tsr5voy*@hmhvno_^44xs%c!&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['boutique-ado-walkthrough.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['buotique-ado-walkthrough.herokuapp.com', 'localhost']
 
 
 # Application definition
